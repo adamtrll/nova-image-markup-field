@@ -1,0 +1,28 @@
+/* Nova Field CSS */
+@tailwind components;
+@tailwind utilities;
+
+
+.btn {
+    @apply border text-left appearance-none cursor-pointer rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 relative disabled:cursor-not-allowed inline-flex items-center justify-center h-9 px-3;
+}
+
+.btn-icon {
+    @apply w-9 px-0;
+}
+
+.btn.btn-primary {
+    @apply shadow bg-primary-500 border-primary-500 hover:[&:not(:disabled)]:bg-primary-400 hover:[&:not(:disabled)]:border-primary-400 text-white dark:text-gray-900;
+}
+
+.btn.btn-text {
+    @apply bg-transparent border-transparent text-gray-600 dark:text-gray-400 hover:[&:not(:disabled)]:bg-gray-700/5 dark:hover:[&:not(:disabled)]:bg-gray-950
+}
+
+.btn.btn-secondary {
+    @apply bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:[&:not(:disabled)]:bg-gray-700/5 dark:hover:[&:not(:disabled)]:bg-gray-950
+}
+
+.btn.btn-destructive {
+    @apply bg-red-500 border-red-500 hover:[&:not(:disabled)]:bg-red-400 hover:[&:not(:disabled)]:border-red-400 text-white dark:text-red-950;
+}
