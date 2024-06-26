@@ -152,7 +152,7 @@ onBeforeUnmount(() => {
         <div ref="container" class="pt-6">
             <div v-if="!editing">
                 <button class="btn btn-primary" @click.prevent="editing = true">
-                    Edit image
+                    Add markup
                 </button>
             </div>
             <div v-show="editing">
@@ -166,7 +166,7 @@ onBeforeUnmount(() => {
                         Cancel
                     </button>
                     <button class="btn btn-primary" @click.prevent="save">
-                        Apply edits
+                        Apply markup
                     </button>
                 </div>
                 <AppDesignerToolbar />
