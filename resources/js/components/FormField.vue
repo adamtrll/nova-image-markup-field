@@ -137,7 +137,10 @@ export default {
             const form = this.$refs.field.$el.closest('form')
             form.dispatchEvent(new Event('change'))
 
-            Nova.$emit('image-markup-saved', this.field.attribute)
+            Nova.$emit('image-markup-saved', {
+                field: this.field.attribute,
+                formId: this.formUniqueId,
+            })
 
             this.handleFileChange([file])
         },
