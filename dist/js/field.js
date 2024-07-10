@@ -423,24 +423,28 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     var zoomModule = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
       return store.modules['ZoomModule'] || null;
     });
+    var selectModule = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      return store.modules['SelectModule'] || null;
+    });
     var save = /*#__PURE__*/function () {
       var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var _zoomModule$value, _container$value2;
+        var _zoomModule$value, _selectModule$value, _container$value2;
         var dataURL;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
               (_zoomModule$value = zoomModule.value) === null || _zoomModule$value === void 0 || _zoomModule$value.resetZoom();
+              (_selectModule$value = selectModule.value) === null || _selectModule$value === void 0 || _selectModule$value.resetSelection();
               // making sure that the zoom changes take place before saving the image
-              _context.next = 3;
+              _context.next = 4;
               return (0,vue__WEBPACK_IMPORTED_MODULE_0__.nextTick)();
-            case 3:
+            case 4:
               dataURL = stageRef.value.getStage().toDataURL({
                 pixelRatio: bg.value.width / ((_container$value2 = container.value) === null || _container$value2 === void 0 ? void 0 : _container$value2.clientWidth)
               });
               emit('save', dataURL);
               editing.value = false;
-            case 6:
+            case 7:
             case "end":
               return _context.stop();
           }
@@ -471,6 +475,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       img: img,
       saveContainerSize: saveContainerSize,
       zoomModule: zoomModule,
+      selectModule: selectModule,
       save: save,
       observer: observer,
       dark: dark,

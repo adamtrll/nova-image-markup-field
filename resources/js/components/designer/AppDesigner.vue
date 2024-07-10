@@ -123,8 +123,13 @@ const zoomModule = computed<ZoomModule | null>(
     () => (store.modules['ZoomModule'] as ZoomModule) || null
 )
 
+const selectModule = computed<SelectModule | null>(
+    () => (store.modules['SelectModule'] as SelectModule) || null
+)
+
 const save = async () => {
     zoomModule.value?.resetZoom()
+    selectModule.value?.resetSelection()
 
     // making sure that the zoom changes take place before saving the image
     await nextTick()
